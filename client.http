@@ -1,0 +1,18 @@
+@baseurl = http://localhost:3000/api
+
+# GET ALL INSTRUMENTS
+GET {{baseurl}}/instruments
+
+###
+
+# SHOW INSTRUMENT PAGE
+GET {{baseurl}}/instruments/1
+
+# # Login
+# POST {{baseurl}}/login
+# Content-Type: application/json
+
+# {
+#   "email": "Drew@email.com",
+#   "password": "Drew123456789"
+# }
