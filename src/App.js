@@ -1,21 +1,30 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+// import Nav from './components/common/Nav'
+// import Home from './components/common/Home'
+// import Footer from './components/common/Footer'
+// import instrumentIndex from './components/instruments/InstrumentsIndex'
+import Register from './components/auth/Register'
+// import Login from './components/auth/Login'
+// import Profile from './components/users/Profile'
 
 function App() {
-  React.useEffect(() => {
-    const getData = async () => {
-      const res = await fetch('/api/instruments/') // * <-- replace with your endpoint
-      const data = await res.json()
-      console.log(data)
-      const res2 = await fetch('/api/instruments/1/')
-      const data2 = await res2.json()
-      console.log(data2)
-
-    }
-    getData()
-  }, [] ) 
-
-  return <h1>Hello World</h1>
+  return (
+    <Router>
+      {/* <Nav /> */}
+      <Switch>
+        {/* <Route exact path='/' component={Home} /> */}
+        {/* <Route path='/instruments' component={instrumentIndex} /> */}
+        {/* <Route path='/profile' component={Profile} /> */}
+        <Route path='/register' component={Register} /> 
+        {/* <Route path='/login' component={Login} /> */}
+        {/* <Route path='/footer' component={Footer} /> */}
+      </Switch>
+    </Router>
+  )
 }
+
 
 export default App
 
