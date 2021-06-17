@@ -1,1 +1,22 @@
+.card {
+  height: 100%;
+  display:flex;
+  flex-direction: column;
+}
+.card-content {
+  margin-top: auto;
+}
+
+.form-link {
+  margin-left: 3px;
+}
+
+span.logout {
+  cursor: pointer;
+}
+
+section.section {
+  min-height: calc(100vh - 11.25rem);
+}
+
 @import '~bulma/bulma.sass';
