@@ -35,7 +35,7 @@
 //         <img className="column is-two-thirds ml-5 img" id="home-picture" src=''/>
 //         <div className="container column ">
 //           <div className="column ">
-//             <form 
+//             <form
 //               className="column is-two-thirds form ml-6"
 //               onSubmit={handleSubmit}
 //             >
@@ -63,7 +63,7 @@
 //                     onChange={handleChange}
 //                   />
 //                 </div>{isError && <small className="help is-danger">Your credentials are incorrect, please check and try again</small>}
-              
+
 //               </div>
 //               <div className="field">
 //                 <button type="submit" className="button is-fullwidth is-dark">
@@ -72,7 +72,7 @@
 //               </div>
 //             </form>
 //           </div>
-//         </div> 
+//         </div>
 //       </section>
 //     </div>
 //   )
