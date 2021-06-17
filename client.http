@@ -8,11 +8,11 @@ GET {{baseurl}}/instruments
 # SHOW INSTRUMENT PAGE
 GET {{baseurl}}/instruments/1
 
-# # Login
-# POST {{baseurl}}/login
-# Content-Type: application/json
+# Login
+POST {{baseurl}}/login
+Content-Type: application/json
 
-# {
-#   "email": "Drew@email.com",
-#   "password": "Drew123456789"
-# }
+{
+  "email": "Drew@email.com",
+  "password": "Drew123456789"
+}
