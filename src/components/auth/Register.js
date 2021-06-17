@@ -26,7 +26,7 @@ function Register() {
       history.push('/login')
     } catch (err) {
       console.log(err)
-      setFormErrors(err.response.data.errors)
+      setFormErrors(err.response.data)
     }
   }
 
@@ -50,6 +50,7 @@ function Register() {
                     id="username"
                     placeholder="Username"
                     onChange={handleChange}
+                    value={formdata.username}
                   />
                 </div>
                 {formErrors.username && (
@@ -67,6 +68,7 @@ function Register() {
                     id="email"
                     onChange={handleChange}
                     placeholder="Email"
+                    value={formdata.email}
                   />
                 </div>
                 {formErrors.email && (
@@ -84,6 +86,7 @@ function Register() {
                     type="password"
                     onChange={handleChange}
                     placeholder="Passord"
+                    value={formdata.password}
                   />
                 </div>
                 {formErrors.password && (
@@ -102,6 +105,7 @@ function Register() {
                     type="password"
                     placeholder="Password Conformation"
                     onChange={handleChange}
+                    value={formdata.password_confirmation}
                   />
                 </div>
                 {formErrors.passwordConfirmation &&
@@ -128,6 +132,7 @@ function Register() {
                     type="firstName"
                     onChange={handleChange}
                     placeholder="First Name "
+                    value={formdata.firstName}
                   />
                 </div>
                 {formErrors.preference && (
@@ -145,7 +150,8 @@ function Register() {
                     name="lastName" id="lastName"
                     type="lastName"
                     onChange={handleChange}
-                    placeholder="First Name"
+                    placeholder="Last Name"
+                    value={formdata.lastName}
                   />
                 </div>
                 {formErrors.preference && (
@@ -164,6 +170,7 @@ function Register() {
                     type="bio"
                     onChange={handleChange}
                     placeholder="Bio "
+                    value={formdata.bio}
                   />
                 </div>
                 {formErrors.preference && (
@@ -172,23 +179,27 @@ function Register() {
               </div>
               
 
-              <div className="select">
+              <div className="select mr-6	">
                 <select className={`input ${formErrors.userType ? 'is-danger' : ''}`}
                   name="userType" id="userType"
                   type="userType"
+                  value={formdata.userType}
                   onChange={handleChange}
-                  placeholder="userType ">
-                  <option>Student account</option>
-                  <option>Teacher account</option>
+                  placeholder="userType">
+                  <option selected>Profile</option>  
+                  <option>Student</option>
+                  <option>Teacher</option>
                 </select> 
               </div>
               
-              <div className="select ml-6">
+              <div className="select mx-6">
                 <select className={`input ${formErrors.instrumentType ? 'is-danger' : ''}`}
                   name="instrumentType" id="instrumentType"
                   type="instrumentType"
                   onChange={handleChange}
-                  placeholder="instrumentType ">
+                  placeholder="instrumentType "
+                  value={formdata.instrumentType}> 
+                  <option selected>Instrument</option>       
                   <option>Piano</option>
                   <option>Drums</option>
                   <option>Timpani</option>
@@ -211,12 +222,13 @@ function Register() {
                 </select> 
               </div>
 
-              <div className="select ml-6	" >
+              <div className="select mx-6" >
                 <select className={`input ${formErrors.locationTypeChoices ? 'is-danger' : ''}`}
                   name="locationTypeChoices" id="locationTypeChoices"
                   type="locationTypeChoices"
                   onChange={handleChange}
                   placeholder="locationTypeChoices ">
+                  <option selected>City</option>  
                   <option>London</option>
                   <option>Manchester</option>
                   <option>Birmingham</option>
