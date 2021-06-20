@@ -10,7 +10,7 @@ export function removeToken() {
   window.localStorage.removeItem('token')
 }
 
-function getPayload() {
+export function getPayload() {
   const token = getToken()
   console.log(token)
   if (!token) return false
@@ -24,4 +24,10 @@ export function isAuthenticated() {
   if (!payload) return false
   const now = Math.round(Date.now() / 1000)
   return now < payload.exp
+}
+
+export function isOwner(userId) {
+  const payload = getPayload()
+  if (!payload) return false
+  return userId === payload.sub
 }

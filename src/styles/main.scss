@@ -69,4 +69,47 @@ code {
     monospace;
 }
 
+.user-profile-image
+{
+  width:160px;
+  height:160px;
+  border-radius: 80px;
+  max-width: 550px;
+  margin: 0px,auto;
+}
+
+.main-user-details {
+  display: flex;
+  justify-content: space-around;
+  margin: 18px,0px;
+  border-bottom: 1px solid grey;
+
+
+}
+
+.user-instrument{
+  display: flex;
+  justify-content: space-between;
+
+
+}
+.user {
+  margin-top: 20%;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
 @import '~bulma/bulma.sass';
