@@ -1,11 +1,12 @@
 import React from 'react'
 import { useHistory } from 'react-router'
 import { register } from '../../lib/api'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../hooks/useForm'
+import ImageUpload from '../hooks/imageUpload'
 
 function Register() {
   const history = useHistory()
-  const { formdata, formErrors, handleChange, setFormErrors } = useForm({
+  const { formdata, formErrors, handleChange, handleImageUpload, setFormErrors } = useForm({
     firstName: '',
     lastName: '',
     username: '',
@@ -13,6 +14,7 @@ function Register() {
     password: '',
     passwordConfirmation: '',
     bio: '',
+    profileImage: '',
     userType: '',
     instrumentType: '',
     locationTypeChoices: '',
@@ -123,7 +125,7 @@ function Register() {
               <br />
               <div className="field">
                 <label className="label" htmlFor="firstName">
-                  Firts Name 
+                  First Name
                 </label>
                 <div className="control">
                   <input
@@ -139,7 +141,6 @@ function Register() {
                   <small className="help is-danger">Enter your First Name</small>
                 )}
               </div>
-
               <div className="field">
                 <label className="label" htmlFor="lastName">
                   Last Name  
@@ -158,7 +159,6 @@ function Register() {
                   <small className="help is-danger">Enter your Last Name</small>
                 )}
               </div>
-
               <div className="field">
                 <label className="label" htmlFor="bio">
                   Bio 
@@ -177,7 +177,6 @@ function Register() {
                   <small className="help is-danger">Enter your bio</small>
                 )}
               </div>
-              
 
               <div className="select mr-6	">
                 <select className={`input ${formErrors.userType ? 'is-danger' : ''}`}
@@ -247,7 +246,14 @@ function Register() {
               </div>
               <br />
               <br />
-
+              <div className="field">
+                <ImageUpload
+                  onUpload={handleImageUpload}
+                />
+              </div>
+              {formErrors.imageUrl && (
+                <small className="help is-danger">{formErrors.imageUrl}</small>
+              )}
               <div className="field">
                 <button type="submit" className="button is-fullwidth is-dark">Register Me!</button>
               </div>
