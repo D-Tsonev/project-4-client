@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { loginUser } from '../../lib/auth'
+import { loginUser } from '../../lib/api'
 import { setToken } from '../../lib/auth'
 import { useForm } from '../hooks/useForm'
 
@@ -18,7 +18,7 @@ function Login() {
     try {
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/instruments')
+      history.push('/instruments') // update this to profile page once logged in
     } catch (err) {
       console.log(err.response.data)
     }

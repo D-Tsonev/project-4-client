@@ -1,0 +1,69 @@
+import React from 'react'
+import { getUser } from '../../lib/api'
+import { useParams } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
+
+
+function Profile(){
+  const [currentUser, setCurrentUser] = React.useState(null)
+  const { id } = useParams()
+
+  // const history = useHistory(
+  
+  // )
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await getUser(id)
+        setCurrentUser(data)
+      } catch (err){
+        console.log(err)
+      }
+    }
+    getData()
+  }, [id])
+
+  
+
+  return (
+    <>
+      {currentUser ?
+    
+        <>
+      
+          <div className="main-user-details">
+            <div className="user-profile-image">
+              <img src={currentUser.profileImage} alt="" className="user-profile-image"/>
+              
+            </div>
+            <div>
+              <h4 className="user"> Hello , my name is {currentUser.firstName}</h4>
+              <div>
+                <h4>I am inetesred in learning {currentUser.instrumentType}  </h4>
+
+              </div>
+            </div>
+            <div className="user-profile-image-view">
+              <h5 className="userType">{currentUser.userType}</h5>
+              <h5 className="instrumentType">{currentUser.instrumentType}</h5>
+              <h3 className="firstName">{currentUser.firstName}</h3>
+            </div>
+          </div>
+          <article className="user-bio-container">
+            <p className="user-biot-text">
+              {currentUser.bio}
+            </p>
+
+          </article>
+
+        </>
+        :
+        <p>Loading</p>
+      }
+    </>
+  )
+}
+
+
+export default Profile
