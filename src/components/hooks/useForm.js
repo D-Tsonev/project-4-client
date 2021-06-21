@@ -9,6 +9,11 @@ export function useForm(initialFormdata) {
     setFormErrors({ ...formErrors, [e.target.name]: '' })
   }
 
+  const handleMultiSelect = selectedItems => {
+    const values = selectedItems ? selectedItems.map(item => item.value) : []
+    setFormdata({ ...formdata, categories: values })
+  }
+
   const handleImageUpload = file => {
     setFormdata({ ...formdata, profileImage: file })
   }
@@ -18,6 +23,7 @@ export function useForm(initialFormdata) {
     formErrors,
     handleChange,
     handleImageUpload,
+    handleMultiSelect,
     setFormdata,
     setFormErrors,
   }
