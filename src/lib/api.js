@@ -3,7 +3,6 @@ import { getToken } from './auth'
 
 const baseUrl = '/api'
 
-// // Needed for create/edit/delete
 function headers() {
   return {
     headers: { Authorization: `Bearer ${getToken()}` },
