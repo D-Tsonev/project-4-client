@@ -1,8 +1,8 @@
 import React from 'react'
-import { getUser , addReview  } from '../../lib/api'
+import { getUser , addReview , deleteReview } from '../../lib/api'
 import { useParams  } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'  
-import {  getPayload } from '../../lib/auth'
+import {  getPayload, isOwner } from '../../lib/auth'
 // import { useHistory } from 'react-router-dom'
 
 
@@ -11,12 +11,13 @@ function Profile(){
   const [currentUser, setCurrentUser] = React.useState(null)
   const { id } = useParams()
   const payload = getPayload()
-  // const history = useHistory()
+  
   const { formdata, handleChange } = useForm({
     content: '',
     rating: '',
     createdAt: '',
-    user: payload.sub,
+    user: id,
+    owner: payload.sub,
   })
 
   React.useEffect(() => {
@@ -32,20 +33,58 @@ function Profile(){
   }, [id])
   console.log(id)
   console.log(currentUser)
+  console.log(isOwner())
+  console.log(payload.sub)
 
   const handleAddReview = async event => {
     event.preventDefault()
 
     try {
       await addReview(formdata,id)
-      const { data } = await getUser()
-      getUser(data)
+      const { data } = await getUser(id)
+      
+      setCurrentUser(data)
     } catch (err) {
       console.log(err)
     }
-    alert(`Submitting form ${JSON.stringify(formdata, null, 2)}`)
+    // alert(`Submitting form ${JSON.stringify(formdata, null, 2)}`)
   }
 
+  const handleDeleteReview = async (reviewId) => {
+    try {
+      await deleteReview(reviewId)
+      const { data } = await getUser(id)
+      setCurrentUser(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  // const handleUserName  = async (id)=> {
+  //   try {
+  //     const { data }  = await getUserName(id)
+  //     console.log(data.username)
+  //     return data.username
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+  // // const EditProfile = () => {
+  //   const {id} = useParams()
+  
+  //   const history = useHistory()
+    
+  //   const [formData, setFormData] = useState({
+  //   firstName: '',
+  //   lastName: '',
+  //   username: '',
+  //   email: '',
+  //   password: '',
+  //   passwordConfirmation: '',
+  //   bio: '',
+  //   userType: '',
+  //   instrumentType: '',
+  //   locationTypeChoices: '',
+  //   })
 
 
   return (
@@ -67,6 +106,7 @@ function Profile(){
                   `I am learning  ${currentUser.instrumentType}`      
                 } 
               </h4>
+            
             </div>
           </div>
           <h1 className="box is-size-3">About me </h1>
@@ -87,58 +127,65 @@ function Profile(){
             </h1>
             <br />
             { currentUser.userType ?
-
               currentUser.reviewsReceived.map(review =>(
-                
                 <div key={review.id}>
-                  <ul className="is-size-6">Rating {'★'.repeat(review.rating)} </ul>
+                  {/* {console.log(review)} */}
+                  {/* {console.log( 'hello',  handleUserName(review.owner))} */}
 
-                  <ul is-size-6> {review.content} </ul>
+                  {/* {console.log('this is current user profile ' + currentUser.id ,currentUser.firstName ,review.owner + ' logged in user => ' + payload.sub)} */}
+                  <ul className="is-size-6">Rating {'★'.repeat(review.rating)} </ul>
+                  
+                  <ul is-size-6>{review.content}  </ul>
                   <hr />
+                  {(payload.sub === review.owner) ?
+                    ( <button onClick={() => handleDeleteReview(review.id)}>Delete</button>)
+                    :
+                    <br />
+                  }
                 </div>
               ))
               : 
               <p>Loading</p>
             }
             
-
           </div>
-
-
-
-          <form onSubmit={handleAddReview} >
-            <div>
-              <label>Write a comment </label>
-            </div>
-            <div>  
-              <textarea
-                onChange={handleChange}
-                name="content"
-                value={formdata.content}
-                placeholder="Leave a review..." /> 
-            </div>
-            <div>
-              <label>Rate from 1 to 5</label>
-            </div>
+          { (payload.sub !== currentUser.id ) ?
+          
+            <form onSubmit={handleAddReview} >
+              <div >
+              
+                <label>Write a comment </label>
+              </div>
+              <div>  
+                <textarea
+                  onChange={handleChange}
+                  name="content"
+                  value={formdata.content}
+                  placeholder="Leave a review..." /> 
+              </div>
+              <div>
+                <label>Rate from 1 to 5</label>
+              </div>
             
-            <div className="rating">
-              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              <div>
 
-              <input className="rating"
-                type="number" 
-                onChange={handleChange}
-                name="rating"
-                min="1"
-                max="5"
+                <input className="rating"
+                  type="number" 
+                  onChange={handleChange}
+                  name="rating"
+                  min="1"
+                  max="5"
             
-                value={formdata.rating} />
-            </div>
+                  value={formdata.rating} />
+              </div>
                   
-            <button className="yellow-background">Submit Review</button>
-            
-
-          </form>
-
+              <button className="yellow-background">Submit Review</button>
+          
+            </form>
+            : 
+            <br />
+          }
+          
         </>
         :
         <p>Loading</p>

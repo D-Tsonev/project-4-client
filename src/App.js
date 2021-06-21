@@ -23,6 +23,8 @@ function App() {
         {/* <Route path='/footer' component={Footer} /> */}
         <Route path="/instruments/:id" component={InstrumentShow} />
         <Route path="/instruments" component={InstrumentsIndex} /> 
+       
+        
       </Switch>
     </Router>
   )

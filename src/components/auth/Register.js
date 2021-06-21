@@ -117,7 +117,7 @@ function Register() {
               
               <br />
               <section>
-                <h4 className="title is-4">Personal Details</h4>
+                <h4 className="title is-">Personal Details</h4>
                 <br />
               </section>
               <br />
@@ -179,7 +179,7 @@ function Register() {
               </div>
               
 
-              <div className="select mr-6	">
+              <div className="select mr-3	">
                 <select className={`input ${formErrors.userType ? 'is-danger' : ''}`}
                   name="userType" id="userType"
                   type="userType"
@@ -192,7 +192,7 @@ function Register() {
                 </select> 
               </div>
               
-              <div className="select mx-6">
+              <div className="select mx-3">
                 <select className={`input ${formErrors.instrumentType ? 'is-danger' : ''}`}
                   name="instrumentType" id="instrumentType"
                   type="instrumentType"
@@ -222,7 +222,7 @@ function Register() {
                 </select> 
               </div>
 
-              <div className="select mx-6" >
+              <div className="select mx-3" >
                 <select className={`input ${formErrors.locationTypeChoices ? 'is-danger' : ''}`}
                   name="locationTypeChoices" id="locationTypeChoices"
                   type="locationTypeChoices"

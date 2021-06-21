@@ -58,6 +58,7 @@ function Nav() {
                     <Link to="/login" className="button is-light">
                   Log In
                     </Link>
+                    
                   </>
                   :
                   <button
