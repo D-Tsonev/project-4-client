@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { getSingleInstrument } from '../../lib/api'
+import YoutubeEmbed from '../hooks/YouTubeEmbed'
 
 function InstrumentShow() {
   const [instrument, setInstrument] = React.useState(null)
@@ -18,6 +19,7 @@ function InstrumentShow() {
     getData()
   }, [id])
 
+  console.log(instrument)
   return (
     <section className="section">
       <div className="container">
@@ -47,7 +49,7 @@ function InstrumentShow() {
                   What does it sound like?
                 </h4>
                 <hr />
-                <p>{instrument.media}</p>
+                <YoutubeEmbed embedId={youTubeIds[instrument.name]} />
               </div>
             </div>
           </div>
@@ -57,6 +59,29 @@ function InstrumentShow() {
       </div>
     </section>
   )
+}
+
+const youTubeIds = {
+  Violin: 'bQIUQzMMD8I',
+  Viola: 'Eazw6wZlr9E',
+  DoubleBass: 'yo_dItX5zGg',
+  Harp: 'HSMAUXsU6Fk',
+  Guitar: '9h5nEQpErJg',
+  Oboe: 'gmqMxK0J2pY',
+  Clarinet: 'FgzVC4jxtxg',
+  Bassoon: 'KJtht57aASI',
+  Saxophone: 'v09VpxRkPb4',
+  Trumpet: 'PZoYrcJGjuc',
+  FrenchHorn: 'Y8Ag7nvdZJU',
+  Trombone: 'kYV-JxDfdYM',
+  Tuba: 'QNjsmFdYnvA',
+  Cornet: 'LlHvZoTWfu4',
+  Xylophone: 'zyhnzdnFORw',
+  Timpani: 'wgcMG4EijSo',
+  Drums: 'KdmrxZTWSds',
+  Piano: 'BM7Jkwqzdts',
+  Cello: 'Y2lQNNoDukE',
+  Flute: '6HyNydVIji4',
 }
 
 export default InstrumentShow

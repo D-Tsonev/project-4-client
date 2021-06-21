@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useHistory, useLocation } from 'react-router-dom'
-import { isAuthenticated, removeToken } from '../../lib/auth'
+import { isAuthenticated, removeToken, getUserId } from '../../lib/auth'
+
 
 function Nav() {
   const location = useLocation()
@@ -20,7 +21,6 @@ function Nav() {
   React.useEffect(() => {
     setIsOpen(false)
   }, [location.pathname])
-
 
   
   return  (
@@ -46,6 +46,9 @@ function Nav() {
             <Link to="/instruments" className="navbar-item">
               Instruments
             </Link>
+            <Link to="/search" className="navbar-item">
+              Find a Teacher
+            </Link>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
@@ -61,12 +64,17 @@ function Nav() {
                     
                   </>
                   :
-                  <button
-                    className="button is-light"
-                    onClick={handleLogout}
-                  >
+                  <>
+                    <button
+                      className="button is-light"
+                      onClick={handleLogout}
+                    >
                   Logout
-                  </button>
+                    </button>
+                    <Link to={`/profile/${getUserId()}`} className="button is-light">
+                      My profile
+                    </Link>
+                  </>
                 }
               </div>
             </div>

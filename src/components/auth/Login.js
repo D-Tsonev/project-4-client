@@ -18,7 +18,7 @@ function Login() {
     try {
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/instruments') // update this to profile page once logged in
+      history.push('/')
     } catch (err) {
       console.log(err.response.data)
     }

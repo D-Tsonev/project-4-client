@@ -10,6 +10,8 @@ import Home from './components/common/Home'
 import Nav from './components/common/Nav'
 import InstrumentsIndex from './components/instruments/InstrumentsIndex'
 import InstrumentShow from './components/instruments/InstrumentShow'
+// import TeachersIndex from './components/users/TeachersIndex'
+import TeacherSearch from './components/users/TeacherSearch'
 
 function App() {
   return (
@@ -23,8 +25,7 @@ function App() {
         {/* <Route path='/footer' component={Footer} /> */}
         <Route path="/instruments/:id" component={InstrumentShow} />
         <Route path="/instruments" component={InstrumentsIndex} /> 
-       
-        
+        <Route path="/search" component={TeacherSearch} />
       </Switch>
     </Router>
   )

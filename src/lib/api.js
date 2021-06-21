@@ -25,7 +25,6 @@ export function loginUser(formdata) {
   return axios.post(`${baseUrl}/auth/login/`, formdata)
 }
 
-
 export function getUser(id){
   return axios.get(`${baseUrl}/auth/profile/${id}/`, headers())
 }
@@ -35,7 +34,7 @@ export  function getUserName(id){
   
 }
 export function getAllUsers(){
-  return axios.get(`${baseUrl}/auth/profile`)
+  return axios.get(`${baseUrl}/auth/profile`, headers())
 }
 
 export function editUser(id, formdata) {
