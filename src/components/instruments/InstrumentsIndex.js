@@ -19,7 +19,7 @@ function InstrumentsIndex() {
   }, [])
 
   return (
-    <section className="section">
+    <section className="section instbg">
       <div className="container">
         <div className="columns is-multiline">
           {instruments ? (

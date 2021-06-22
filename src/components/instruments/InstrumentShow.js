@@ -21,12 +21,12 @@ function InstrumentShow() {
 
   console.log(instrument)
   return (
-    <section className="section">
-      <div className="container">
+    <section className="section instbg-show">
+      <div className="container whitebg">
         {instrument ? (
           <div>
             <h2 className="title has-text-centered">{instrument.name}</h2>
-            <hr />
+            <br/>
             <div className="columns">
               <div className="column is-half">
                 <figure className="image">
@@ -38,17 +38,17 @@ function InstrumentShow() {
                   About
                 </h4>
                 <p>{instrument.description}</p>
-                <hr />
+                <br/><br/>
                 <h4 className="title is-4">
                   Instrument Family
                 </h4>
-                <hr />
+
                 <p>{instrument.instrumentFamily}</p>
-                <hr />
+                <br/><br/><br/><br/><br/><br/>
                 <h4 className="title is-4">
                   What does it sound like?
                 </h4>
-                <hr />
+
                 <YoutubeEmbed embedId={youTubeIds[instrument.name]} />
               </div>
             </div>

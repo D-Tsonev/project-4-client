@@ -36,11 +36,13 @@ function Register() {
 
   return (
     <div >
-      <section className="section">
+      <section className="section profbg">
         <div className="container">
           <div className="columns">
+
             <form className="column is-half is-offset-one-quarter"
               onSubmit={handleSubmit}>
+              <h1>Become a Music Maker</h1>
               <div className="field">
                 <label className="label" htmlFor="username">
                   Username
@@ -116,13 +118,10 @@ function Register() {
                   </small>
                 }
               </div>
-              
               <br />
-              <section>
-                <h4 className="title is-">Personal Details</h4>
-                <br />
-              </section>
-              <br />
+              <h1>Personal Details</h1>
+
+
               <div className="field">
                 <label className="label" htmlFor="firstName">
                   First Name
@@ -177,73 +176,81 @@ function Register() {
                   <small className="help is-danger">Enter your bio</small>
                 )}
               </div>
+              <div className="columns">
+                <div className="column">
+                  <select className={`input ${formErrors.userType ? 'is-danger' : ''}`}
+                    name="userType" id="userType"
+                    type="userType"
+                    value={formdata.userType}
+                    onChange={handleChange}
+                    placeholder="userType">
+                    <option selected>Profile type:</option>
+                    <option>Student</option>
+                    <option>Teacher</option>
+                  </select>
+                </div>
+                <div className="column">
+                  <select className={`input ${formErrors.instrumentType ? 'is-danger' : ''}`}
+                    name="instrumentType" id="instrumentType"
+                    type="instrumentType"
+                    onChange={handleChange}
+                    placeholder="instrumentType "
+                    value={formdata.instrumentType}>
+                    <option selected>Instrument:</option>
+                    <option>Piano</option>
+                    <option>Drums</option>
+                    <option>Timpani</option>
+                    <option>Xylophone</option>
+                    <option>Cornet</option>
+                    <option>Tuba</option>
+                    <option>Trombone</option>
+                    <option>French Horn</option>
+                    <option>Trumpet</option>
+                    <option>Saxophone</option>
+                    <option>Bassoon</option>
+                    <option>Clarinet</option>
+                    <option>Oboe</option>
+                    <option>Flute</option>
+                    <option>Guitar</option>
+                    <option>Harp</option>
+                    <option>Double Bass</option>
+                    <option>Cello</option>
+                    <option>Violin</option>
+                  </select>
+                </div>
+                <div className="column">
+                  <select className={`input ${formErrors.locationTypeChoices ? 'is-danger' : ''}`}
+                    name="locationTypeChoices" id="locationTypeChoices"
+                    type="locationTypeChoices"
+                    onChange={handleChange}
+                    placeholder="locationTypeChoices ">
+                    <option selected>City:</option>
+                    <option>London</option>
+                    <option>Manchester</option>
+                    <option>Birmingham</option>
+                    <option>Liverpool</option>
+                    <option>Leeds</option>
+                    <option>Newcastle</option>
+                    <option>Edinburgh</option>
+                    <option>Glasgow</option>
+                    <option>Cambridge</option>
+                    <option>Bristol</option>
+                    <option>Cardiff</option>
+                    <option>Belfast</option>
+                    <option>York</option>
+                    <option>Sheffield</option>
+                  </select>
+                </div>
 
-              <div className="select mr-3	">
-                <select className={`input ${formErrors.userType ? 'is-danger' : ''}`}
-                  name="userType" id="userType"
-                  type="userType"
-                  value={formdata.userType}
-                  onChange={handleChange}
-                  placeholder="userType">
-                  <option selected>Profile</option>  
-                  <option>Student</option>
-                  <option>Teacher</option>
-                </select> 
               </div>
+
+
+
+
               
-              <div className="select mx-3">
-                <select className={`input ${formErrors.instrumentType ? 'is-danger' : ''}`}
-                  name="instrumentType" id="instrumentType"
-                  type="instrumentType"
-                  onChange={handleChange}
-                  placeholder="instrumentType "
-                  value={formdata.instrumentType}> 
-                  <option selected>Instrument</option>       
-                  <option>Piano</option>
-                  <option>Drums</option>
-                  <option>Timpani</option>
-                  <option>Xylophone</option>
-                  <option>Cornet</option>
-                  <option>Tuba</option>
-                  <option>Trombone</option>
-                  <option>French Horn</option>
-                  <option>Trumpet</option>
-                  <option>Saxophone</option>
-                  <option>Bassoon</option>
-                  <option>Clarinet</option>
-                  <option>Oboe</option>
-                  <option>Flute</option>
-                  <option>Guitar</option>
-                  <option>Harp</option>
-                  <option>Double Bass</option>
-                  <option>Cello</option>
-                  <option>Violin</option>
-                </select> 
-              </div>
 
-              <div className="select mx-3" >
-                <select className={`input ${formErrors.locationTypeChoices ? 'is-danger' : ''}`}
-                  name="locationTypeChoices" id="locationTypeChoices"
-                  type="locationTypeChoices"
-                  onChange={handleChange}
-                  placeholder="locationTypeChoices ">
-                  <option selected>City</option>  
-                  <option>London</option>
-                  <option>Manchester</option>
-                  <option>Birmingham</option>
-                  <option>Liverpool</option>
-                  <option>Leeds</option>
-                  <option>Newcastle</option>
-                  <option>Edinburgh</option>
-                  <option>Glasgow</option>
-                  <option>Cambridge</option>
-                  <option>Bristol</option>
-                  <option>Cardiff</option>
-                  <option>Belfast</option>
-                  <option>York</option>
-                  <option>Sheffield</option>
-                </select> 
-              </div>
+
+
               <br />
               <br />
               <div className="field">

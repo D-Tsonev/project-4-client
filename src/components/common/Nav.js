@@ -25,7 +25,9 @@ function Nav() {
   
   return  (
     <nav className="navbar is-dark">
+
       <div className="container">
+
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
           Home
@@ -49,6 +51,9 @@ function Nav() {
             <Link to="/search" className="navbar-item">
               Find a Teacher
             </Link>
+          </div>
+          <div className="siteLogo">
+            <h1>Music Makers</h1>
           </div>
           <div className="navbar-end">
             <div className="navbar-item">

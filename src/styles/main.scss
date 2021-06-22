@@ -110,5 +110,155 @@ code {
    content: "\2605";
    position: absolute;
 }
+.navbar .siteLogo {
+text-align: center;
+}
+.navbar h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 40px;
+}
+
+.hero-body {
+  background-image: url('https://res.cloudinary.com/dosqoxtnj/image/upload/v1624311766/About-Life-Changing-2-CROP_hrqjkv.jpg'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%;
+}
+
+.hero-body .container h2 {font-family: 'Permanent Marker', cursive;
+font-size: 30px;
+padding-bottom: 15px;}
+
+.hero-body .container {
+  background-color: black;
+  color:white;
+  padding: 30px 50px 50px 50px;
+  margin-left: 300px;
+  margin-right: 500px;
+  margin-top: 200px;
+}
+
+.main-area  {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  color:white;
+  padding: 30px 50px 50px 50px;
+
+}
+
+.main-body .container h2, .main-body-bottom .container h2,  {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 60px;
+  padding-bottom: 15px;
+}
+
+
+.main-area-bottom  {
+background: rgb(63,94,251);
+background: linear-gradient(180deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+color:white;
+padding: 30px 50px 50px 50px;
+}
+
+.instbg {
+  background: rgb(63,94,251);
+  background: linear-gradient(180deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+.teachbg {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+
+}
+
+.instbg-show {
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.card-header-title-inst {
+text-align: center;
+color: white;
+padding-bottom: 40px;
+padding-left: 0px;
+padding-top: 10px;
+
+}
+
+.card-image-inst {
+  text-align: center;
+  padding-left:60px;
+}
+
+.card-image-inst img.cardimg  {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+
+}
+
+.whitebg {
+  background-color: rgba(255, 255, 255, 0.5) ;
+  padding: 50px;
+  border-radius: 25px;
+}
+
+.whitebg .title, .teachbg h1 {
+  font-size: 60px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.teachbg h4 {
+  font-size: 60px;
+  line-height: 65px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.hero-search .search {
+  padding-left: 400px;
+  padding-right: 400px;
+  padding-top: 100px;
+}
+
+.hero-search .search-input {
+  margin-right: 20px;
+  width: 80%;
+}
+
+.hero-search .clearbutton {
+  margin-top: 5px;
+}
+
+.card-header-title-teach {
+  text-align: center;
+  color: white;
+  padding-bottom: 40px;
+  padding-left: 0px;
+  padding-top: 10px;
+
+  }
+
+   img.teacherimg {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    margin-left: 50px;
+    margin-top: 50px;
+  }
+
+  html, section, nav, .navbar, button {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .profbg {
+    background: rgb(54,247,145);
+    background: linear-gradient(90deg, rgba(54,247,145,1) 0%, rgba(3,134,203,1) 27%, rgba(6,65,157,1) 52%, rgba(0,212,255,1) 100%);
+  color:white;
+  }
+
+  .profbg label {color: white;}
+
+  .profbg h1, h4{
+    font-size: 30px;
+  font-family: 'Permanent Marker', cursive;
+  }
 
 @import '~bulma/bulma.sass';
