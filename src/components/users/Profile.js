@@ -1,7 +1,7 @@
 import React from 'react'
 import { getUser , addReview , deleteReview } from '../../lib/api'
 import { useParams  } from 'react-router-dom'
-import { useForm } from '../../hooks/useForm'  
+import { useForm } from '../hooks/useForm'
 import {  getPayload, isOwner } from '../../lib/auth'
 // import { useHistory } from 'react-router-dom'
 
