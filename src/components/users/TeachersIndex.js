@@ -22,14 +22,14 @@ function TeachersIndex() {
 
   const filteredUsers = users?.filter((users) => {
     return (
-      users.userType.includes('Teacher')
+      users.userType === 'Teacher'
     )
   })
 
   console.log(users)
   return (
     <section className="hero is-fullheight-with-navbar">
-      <div className="winter-background-image hero-body">
+      <div className="search-bar">
         <section className="section">
           <div className="container">
             <div className="columns is-multiline">

@@ -39,36 +39,36 @@ function TeacherSearch() {
 
 
   return (
-    <section className="hero is-fullheight-with-navbar">
-      <div className="winter-background-image hero-body">
+    <section className="hero-search">
+      <div className="hero-body search">
         <input
-          className="input is-medium is-success"
+          className="input is-medium search-input"
           placeholder="Search by instrument type or location.."
           onChange={handleInput}
           value={searchTerm}
         />
-        <button className="button" type="button" onClick={handleClear}>Clear</button>
+        <button className="button clearbutton" type="button" onClick={handleClear}>Clear</button>
       </div>
-      <section className="section">
+      <section className="section teachbg">
         <div className="container">
           <div className="columns is-multiline">
             {/* {isError && <Error />}
             {isLoading && <p>...loading</p>} */}
             {filteredUsers && (
-              filteredUsers.map(user =>  <div key={user._id} className="column is-3">
+              filteredUsers.map(user =>  <div key={user.id} className="column is-3">
                 <Link to={`/profile/${user.id}`}>
-                  <div className="card">
-                    <div className="card-header">
-                      <div className="card-header-title">{user.username}</div>
-                    </div>
-                    <div className="card-header">
-                      <div className="card-header-title">{user.location}</div>
-                    </div>
-                    <div className="card-image">
+                  <div className="card-inst">
+
+                    <div className="card-image-inst">
                       <figure className="image image-is-1by1">
                         <img className="cardimg" src={user.profileImage} alt={user.username} />
                       </figure>
                     </div>
+
+                    <div className="card-header-inst">
+                      <div className="card-header-title-teach">{user.username} <br/> {user.locationTypeChoices}</div>
+                    </div>
+
                   </div>
                 </Link>
               </div>

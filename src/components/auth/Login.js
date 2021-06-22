@@ -25,7 +25,7 @@ function Login() {
   }
 
   return (
-    <section className="section">
+    <section className="section profbg">
       <div className="container">
         <div className="columns">
           <form
