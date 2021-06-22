@@ -94,12 +94,14 @@ function Profile(){
                         <div key={review.id}>
                           <ul className="is-size-6">Rating {'★'.repeat(review.rating)} </ul>
                           <ul is-size-6>{review.content}  </ul>
-                          <hr />
+                          
                           {(payload.sub === review.owner) ?
                             ( <button className="button is-white" onClick={() => handleDeleteReview(review.id)}>Delete</button>)
                             :
                             <br />
                           }
+                          <hr />
+                          <br />
                         </div>
                       ))
                       :

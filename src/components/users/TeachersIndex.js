@@ -26,7 +26,9 @@ function TeachersIndex() {
     )
   })
 
-  console.log(users)
+  
+  console.log(filteredUsers)
+
   return (
     <section className="hero is-fullheight-with-navbar">
       <div className="search-bar">
@@ -36,7 +38,7 @@ function TeachersIndex() {
               {/* {isError && <Error />}
               {isLoading && <p>...loading</p>} */}
               {filteredUsers && (
-                filteredUsers.map(user => <ProfileCard key={user._id} {...user} />)
+                filteredUsers.map(user => <ProfileCard key={user.id} {...user} />)
               )}
             </div>
           </div>

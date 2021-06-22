@@ -34,9 +34,11 @@ function TeacherSearch() {
     return (
       user.locationTypeChoices.toLowerCase().includes(searchTerm) ||
       user.instrumentType.toString().toLowerCase().includes(searchTerm)
+      
     )
   })
 
+  console.log(users)
 
   return (
     <section className="hero-search">
