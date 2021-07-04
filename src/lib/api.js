@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getToken } from './auth'
+import { baseUrl } from '../config'
 
-const baseUrl = '/api'
 
 function headers() {
   return {
@@ -34,7 +34,7 @@ export  function getUserName(id){
   
 }
 export function getAllUsers(){
-  return axios.get(`${baseUrl}/auth/profile`, headers())
+  return axios.get(`${baseUrl}/auth/profile/`, headers())
 }
 
 export function editUser(id, formdata) {
