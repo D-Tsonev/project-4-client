@@ -49,7 +49,7 @@ function InstrumentShow() {
                   What does it sound like?
                 </h4>
 
-                <YoutubeEmbed embedId={youTubeIds[instrument.name]} />
+                <YoutubeEmbed embedId={youTubeIds[instrument. ]} />
               </div>
             </div>
           </div>
