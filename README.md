@@ -264,7 +264,7 @@ If we had more time to complete this project we would have included:
 * Dedicated more time to styling.
 * Implemented conversation between user functionality.
 * Display the average rating for each user.
-* Display top-reviewed pies on the homepage.
+
 
 
 
