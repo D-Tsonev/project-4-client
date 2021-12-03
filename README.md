@@ -31,7 +31,7 @@ Our app pairs students from leading conservatoires and music degrees with aspiri
 
 ## The Brief 
 
-- To build a full-stack application, making our back end and front end
+- To build a full-stack application, making our back end and front end.
 - Use a Python Django API, using Django REST Framework to serve our data from a PostgresSQL database.
 - Consume our API with a separate frontend built with React.
 - Build a complete product, which most likely means multiple relationships and CRUD functionality for at least a couple of models.
